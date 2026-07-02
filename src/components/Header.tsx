@@ -1,10 +1,10 @@
-import { profile } from '../data'
+import { brand } from '../data'
 
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#menu', label: '메뉴' },
+  { href: '#story', label: '스토리' },
+  { href: '#reviews', label: '후기' },
+  { href: '#visit', label: '오시는 길' },
 ]
 
 export function Header() {
@@ -12,7 +12,7 @@ export function Header() {
     <header className="header">
       <div className="container header__inner">
         <a href="#top" className="header__brand">
-          {profile.name}
+          {brand.name}
         </a>
         <nav className="header__nav">
           {links.map((link) => (

@@ -1,12 +1,12 @@
 :root {
-  --text: #4b5563;
-  --text-h: #0f172a;
-  --bg: #ffffff;
-  --bg-muted: #f8fafc;
-  --border: #e5e7eb;
-  --accent: #6d28d9;
+  --text: #6b5545;
+  --text-h: #3f2a1d;
+  --bg: #fffaf3;
+  --bg-muted: #fbf0df;
+  --border: #ecdfc9;
+  --accent: #d97757;
   --accent-contrast: #ffffff;
-  --shadow: rgba(15, 23, 42, 0.08) 0 10px 30px -12px;
+  --shadow: rgba(63, 42, 29, 0.1) 0 10px 30px -12px;
 
   --sans: system-ui, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR',
     sans-serif;
@@ -21,13 +21,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #a1a8b4;
-    --text-h: #f3f4f6;
-    --bg: #0f1115;
-    --bg-muted: #161922;
-    --border: #262a33;
-    --accent: #a78bfa;
-    --accent-contrast: #0f1115;
+    --text: #cbb9a6;
+    --text-h: #f5ece1;
+    --bg: #211712;
+    --bg-muted: #2a1e17;
+    --border: #3a2c22;
+    --accent: #e8916b;
+    --accent-contrast: #211712;
     --shadow: rgba(0, 0, 0, 0.5) 0 10px 30px -12px;
   }
 }
@@ -61,7 +61,7 @@ ul {
 
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -193,33 +193,46 @@ ul {
   margin-bottom: 24px;
 }
 
-/* Skills */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-.skills__item {
-  padding: 10px 18px;
-  border-radius: 999px;
+.feature-card {
+  padding: 24px;
   border: 1px solid var(--border);
+  border-radius: 16px;
   background: var(--bg);
-  color: var(--text-h);
-  font-size: 14px;
-  font-weight: 500;
+  text-align: center;
 }
 
-/* Projects */
-.projects {
+.feature-card__icon {
+  display: inline-flex;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.feature-card__title {
+  font-size: 16px;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.feature-card__description {
+  font-size: 14px;
+}
+
+/* Menu */
+.menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
-.card {
-  display: block;
+.menu-card {
+  position: relative;
   padding: 24px;
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -227,33 +240,92 @@ ul {
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.card:hover {
+.menu-card:hover {
   box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
 
-.card__title {
+.menu-card__tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-muted);
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.menu-card__title {
   font-size: 18px;
   margin-bottom: 8px;
 }
 
-.card__description {
+.menu-card__description {
   font-size: 14px;
   margin-bottom: 16px;
 }
 
-.card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.menu-card__price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0;
 }
 
-.card__tags li {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg);
+}
+
+.testimonial-card__comment {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.testimonial-card__name {
+  font-size: 13px;
+  font-style: normal;
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+/* Visit */
+.visit {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.visit__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.visit__list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   background: var(--bg-muted);
-  color: var(--text);
+  font-size: 14px;
+}
+
+.visit__list strong {
+  color: var(--text-h);
 }
 
 /* Footer */
