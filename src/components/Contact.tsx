@@ -4,7 +4,7 @@ export function Contact() {
   return (
     <section id="visit" className="section">
       <div className="container">
-        <h2 className="section__title">오시는 길</h2>
+        <h2 className="section__title">매장안내</h2>
         <div className="visit">
           <ul className="visit__list">
             <li>
@@ -22,7 +22,7 @@ export function Contact() {
           </ul>
           <div className="hero__actions">
             <a className="button button--primary" href={`mailto:${brand.email}`}>
-              주문 문의하기
+              멤버십 문의하기
             </a>
             <a
               className="button button--ghost"

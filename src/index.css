@@ -1,12 +1,13 @@
 :root {
-  --text: #6b5545;
-  --text-h: #3f2a1d;
-  --bg: #fffaf3;
-  --bg-muted: #fbf0df;
-  --border: #ecdfc9;
-  --accent: #d97757;
+  --text: #4b5a52;
+  --text-h: #16241d;
+  --bg: #ffffff;
+  --bg-muted: #f2f7f4;
+  --border: #dde8e1;
+  --accent: #1f8a5f;
+  --accent-warn: #e8791a;
   --accent-contrast: #ffffff;
-  --shadow: rgba(63, 42, 29, 0.1) 0 10px 30px -12px;
+  --shadow: rgba(22, 36, 29, 0.1) 0 10px 30px -12px;
 
   --sans: system-ui, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR',
     sans-serif;
@@ -21,13 +22,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #cbb9a6;
-    --text-h: #f5ece1;
-    --bg: #211712;
-    --bg-muted: #2a1e17;
-    --border: #3a2c22;
-    --accent: #e8916b;
-    --accent-contrast: #211712;
+    --text: #aebdb4;
+    --text-h: #eef5f1;
+    --bg: #121a16;
+    --bg-muted: #182420;
+    --border: #263630;
+    --accent: #3fb884;
+    --accent-warn: #f2954a;
+    --accent-contrast: #0c1310;
     --shadow: rgba(0, 0, 0, 0.5) 0 10px 30px -12px;
   }
 }
@@ -270,7 +272,32 @@ ul {
   font-size: 16px;
   font-weight: 700;
   color: var(--text-h);
-  margin: 0;
+  margin: 0 0 12px;
+}
+
+.menu-card--highlighted {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.plan-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.plan-perks li {
+  padding-left: 20px;
+  position: relative;
+}
+
+.plan-perks li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 /* Testimonials */

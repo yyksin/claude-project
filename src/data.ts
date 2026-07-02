@@ -1,81 +1,105 @@
 export const brand = {
-  name: '몽글베이커리',
-  tagline: '매일 아침, 갓 구운 행복을 굽습니다',
+  name: '알뜰창고',
+  tagline: '더 크게 사서, 더 크게 아끼다',
   description:
-    '국내산 재료와 정직한 레시피로 매일 새벽 빵을 굽는 작은 동네 베이커리입니다. 인공 첨가물 없이, 눈으로 보이는 재료만 사용합니다.',
-  instagram: 'https://instagram.com/monggeul.bakery',
-  email: 'hello@monggeulbakery.example',
-  phone: '02-1234-5678',
-  address: '서울시 마포구 몽글길 12',
-  hours: '매일 08:00 - 20:00 (매주 월요일 휴무)',
+    '연회비 멤버십으로 대용량 생필품과 식품을 시중가보다 합리적으로 만나는 창고형 할인마트입니다.',
+  instagram: 'https://instagram.com/alttl.warehouse',
+  email: 'membership@alttlchanggo.example',
+  phone: '1588-0000',
+  address: '경기도 고양시 알뜰로 88',
+  hours: '매일 09:00 - 22:00 (매월 둘째·넷째 주 수요일 휴무)',
 }
 
 export const features = [
   {
-    icon: '🌾',
-    title: '국내산 재료',
-    description: '밀가루, 버터, 우유까지 눈으로 확인한 국내산 재료만 사용합니다.',
-  },
-  {
-    icon: '🌙',
-    title: '매일 새벽 굽는 빵',
-    description: '전날 재고를 남기지 않고, 매일 새벽 그날 판매할 만큼만 굽습니다.',
-  },
-  {
-    icon: '🚫',
-    title: '무첨가 레시피',
-    description: '인공 방부제와 향료 없이 담백한 본연의 맛을 지향합니다.',
-  },
-  {
     icon: '📦',
-    title: '포장 & 픽업',
-    description: '전화 또는 인스타그램 DM으로 미리 주문하면 대기 없이 픽업 가능합니다.',
+    title: '대용량 패키지',
+    description: '가정용부터 사업자용까지, 필요한 만큼 넉넉하게 담아가는 대용량 구성.',
+  },
+  {
+    icon: '🏷️',
+    title: '회원 전용 특가',
+    description: '멤버십 회원에게만 열리는 매주 갱신되는 단독 할인 상품.',
+  },
+  {
+    icon: '🚚',
+    title: '당일 픽업 · 배송',
+    description: '매장 픽업은 무료, 5만원 이상 구매 시 당일 배송을 지원합니다.',
+  },
+  {
+    icon: '↩️',
+    title: '무조건 환불 보장',
+    description: '이유를 묻지 않는 100% 환불 정책으로 안심하고 구매하세요.',
   },
 ]
 
-export type MenuItem = {
+export type MembershipPlan = {
+  name: string
+  price: string
+  period: string
+  perks: string[]
+  highlighted?: boolean
+}
+
+export const membershipPlans: MembershipPlan[] = [
+  {
+    name: '베이직 멤버십',
+    price: '35,000원',
+    period: '연 회원권',
+    perks: ['전 매장 이용 가능', '주간 특가 알림', '무료 매장 픽업'],
+  },
+  {
+    name: '프리미엄 멤버십',
+    price: '70,000원',
+    period: '연 회원권',
+    perks: ['베이직 혜택 모두 포함', '구매 금액 2% 캐시백', '당일 배송 무료', '전용 상담 라인'],
+    highlighted: true,
+  },
+]
+
+export type Product = {
   name: string
   description: string
   price: string
   tag: string
 }
 
-export const menu: MenuItem[] = [
+export const products: Product[] = [
   {
-    name: '크림치즈 스콘',
-    description: '겉은 바삭하고 속은 촉촉한 정통 스콘 위에 크림치즈를 듬뿍 올렸습니다.',
-    price: '4,500원',
+    name: '점보 키친타월 30롤',
+    description: '3겹 엠보싱 키친타월 대용량 세트. 한 번 사면 반년은 든든합니다.',
+    price: '24,900원',
+    tag: '생필품',
+  },
+  {
+    name: '엑스트라버진 올리브오일 3L',
+    description: '콜드프레스 방식으로 짜낸 대용량 올리브오일 캔.',
+    price: '32,900원',
+    tag: '식품',
+  },
+  {
+    name: '견과류 트레일믹스 2kg',
+    description: '아몬드, 캐슈넛, 크랜베리를 섞은 대용량 견과 간식.',
+    price: '19,900원',
     tag: '베스트',
   },
   {
-    name: '얼그레이 파운드케이크',
-    description: '얼그레이 찻잎을 우려낸 반죽으로 은은한 향을 살린 촉촉한 파운드케이크.',
-    price: '5,800원',
-    tag: '시그니처',
+    name: '고농축 세탁세제 5L',
+    description: '한 번에 최대 160회 사용 가능한 고농축 액체 세제.',
+    price: '18,500원',
+    tag: '생필품',
   },
   {
-    name: '버터 소금빵',
-    description: '겹겹이 쌓은 반죽에 발효 버터를 넣어 짭짤하고 고소하게 구웠습니다.',
-    price: '3,800원',
+    name: '냉동 만두 대용량 3kg',
+    description: '한입 크기 왕만두를 소분 포장한 대용량 냉동 세트.',
+    price: '21,900원',
     tag: '베스트',
   },
   {
-    name: '티라미수 크로플',
-    description: '바삭한 크로플 위에 마스카포네 크림과 코코아 파우더를 올린 디저트.',
-    price: '6,500원',
-    tag: 'NEW',
-  },
-  {
-    name: '무화과 갈레트',
-    description: '제철 무화과를 듬뿍 올려 자유롭게 접어 구운 프렌치 타르트.',
-    price: '7,200원',
-    tag: '시즌 한정',
-  },
-  {
-    name: '딸기 생크림 롤케이크',
-    description: '부드러운 시트에 신선한 생크림과 딸기를 가득 채운 롤케이크.',
-    price: '28,000원',
-    tag: 'NEW',
+    name: '멀티비타민 365정',
+    description: '하루 한 알, 1년치 영양을 챙기는 종합 비타민.',
+    price: '27,900원',
+    tag: '건강',
   },
 ]
 
@@ -86,15 +110,15 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [
   {
-    name: '김OO 님',
-    comment: '소금빵이 정말 인생 소금빵이에요. 매주 사러 갑니다.',
+    name: '정OO 님',
+    comment: '4인 가족 생필품을 한 번에 쟁여두니 장보는 횟수가 확 줄었어요.',
   },
   {
-    name: '이OO 님',
-    comment: '재료가 좋다는 게 한입 먹으면 느껴져요. 아이 간식으로도 안심하고 사줘요.',
+    name: '최OO 님',
+    comment: '프리미엄 멤버십 캐시백만으로 연회비가 몇 달 만에 빠지네요.',
   },
   {
-    name: '박OO 님',
-    comment: '아침 일찍 가야 원하는 빵을 살 수 있을 정도로 인기가 많아요!',
+    name: '한OO 님',
+    comment: '환불 정책이 확실해서 대용량으로 구매해도 부담이 없어요.',
   },
 ]

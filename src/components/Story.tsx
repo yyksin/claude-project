@@ -1,15 +1,27 @@
-import { brand } from '../data'
+import { membershipPlans } from '../data'
 
 export function Story() {
   return (
     <section id="story" className="section">
       <div className="container">
-        <h2 className="section__title">브랜드 스토리</h2>
-        <p className="about__text">
-          {brand.name}는 &ldquo;좋은 재료로 만든 빵은 거짓말을 하지 않는다&rdquo;는 믿음에서
-          시작했습니다. 매일 새벽, 그날 판매할 만큼만 반죽하고 구워내며, 남은 빵을 다음 날 파는
-          일은 하지 않습니다. 작은 동네 빵집이지만 재료와 정성만큼은 타협하지 않습니다.
-        </p>
+        <h2 className="section__title">멤버십 안내</h2>
+        <div className="menu-grid">
+          {membershipPlans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`menu-card${plan.highlighted ? ' menu-card--highlighted' : ''}`}
+            >
+              <span className="menu-card__tag">{plan.period}</span>
+              <h3 className="menu-card__title">{plan.name}</h3>
+              <p className="menu-card__price">{plan.price}</p>
+              <ul className="plan-perks">
+                {plan.perks.map((perk) => (
+                  <li key={perk}>{perk}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
